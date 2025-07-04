@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>RTP de Slots - Equipe L7</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f9;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+    .logo {
+      margin-top: 20px;
+    }
+    .logo img {
+      max-width: 200px;
+      height: auto;
+    }
+    table {
+      width: 90%;
+      margin: 30px auto;
+      border-collapse: collapse;
+      background-color: white;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      font-size: 18px;
+    }
+    caption {
+      font-size: 1.8em;
+      margin-bottom: 15px;
+      font-weight: bold;
+    }
+    th, td {
+      padding: 15px;
+      border-bottom: 1px solid #ddd;
+      font-weight: bold;
+    }
+    th {
+      background-color: #4CAF50;
+      color: white;
+    }
+    tr:hover {
+      background-color: #f1f1f1;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="logo">
+    <img src="logo.png" alt="Logo Equipe L7">
+  </div>
+
+  <table>
+    <caption>RTP de Slots (Atualizado ao Vivo)</caption>
+    <thead>
+      <tr>
+        <th>Jogo</th>
+        <th>Provedor</th>
+        <th>RTP Padrão (%)</th>
+        <th>RTP Atual (%)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>Fortune Tiger</td><td>PG</td><td data-rtp-padrao="99.7">99.7</td><td class="rtp-atual">--</td></tr>
+      <tr><td>Fortune Dragon</td><td>PG</td><td data-rtp-padrao="99.7">99.7</td><td class="rtp-atual">--</td></tr>
+      <tr><td>Fortune OX</td><td>PG</td><td data-rtp-padrao="99.7">99.7</td><td class="rtp-atual">--</td></tr>
+      <tr><td>Fortune Rabbit</td><td>PG</td><td data-rtp-padrao="99.7">99.7</td><td class="rtp-atual">--</td></tr>
+      <tr><td>Fortune Mouse</td><td>PG</td><td data-rtp-padrao="99.7">99.7</td><td class="rtp-atual">--</td></tr>
+      <tr><td>Dragon Hatch</td><td>PG</td><td data-rtp-padrao="99.7">99.7</td><td class="rtp-atual">--</td></tr>
+      <tr><td>Cash Mania</td><td>PG</td><td data-rtp-padrao="99.7">99.7</td><td class="rtp-atual">--</td></tr>
+      <tr><td>Midas Fortune</td><td>PG</td><td data-rtp-padrao="99.7">99.7</td><td class="rtp-atual">--</td></tr>
+      <tr><td>Ganesha Gold</td><td>PG</td><td data-rtp-padrao="99.7">99.7</td><td class="rtp-atual">--</td></tr>
+      <tr><td>Piggy Gold</td><td>PG</td><td data-rtp-padrao="99.7">99.7</td><td class="rtp-atual">--</td></tr>
+      <tr><td>Jungle Delight</td><td>PG</td><td data-rtp-padrao="99.7">99.7</td><td class="rtp-atual">--</td></tr>
+      <tr><td>Double Fortune</td><td>PG</td><td data-rtp-padrao="99.7">99.7</td><td class="rtp-atual">--</td></tr>
+      <tr><td>Supermarket Spree</td><td>PG</td><td data-rtp-padrao="99.7">99.7</td><td class="rtp-atual">--</td></tr>
+      <tr><td>Dragon Tiger Luck</td><td>PG</td><td data-rtp-padrao="99.7">99.7</td><td class="rtp-atual">--</td></tr>
+      <tr><td>Bikini Paradise</td><td>PG</td><td data-rtp-padrao="99.7">99.7</td><td class="rtp-atual">--</td></tr>
+      <tr><td>The Great Icescape</td><td>PG</td><td data-rtp-padrao="99.7">99.7</td><td class="rtp-atual">--</td></tr>
+      <tr><td>Fortune Gods</td><td>PG</td><td data-rtp-padrao="99.7">99.7</td><td class="rtp-atual">--</td></tr>
+      <tr><td>Wild Bandito</td><td>PG</td><td data-rtp-padrao="99.7">99.7</td><td class="rtp-atual">--</td></tr>
+      <tr><td>Butterfly Blossom</td><td>PG</td><td data-rtp-padrao="99.7">99.7</td><td class="rtp-atual">--</td></tr>
+      <tr><td>Buffalo Win</td><td>PG</td><td data-rtp-padrao="99.7">99.7</td><td class="rtp-atual">--</td></tr>
+      <tr><td>Speed Winner</td><td>PG</td><td data-rtp-padrao="99.7">99.7</td><td class="rtp-atual">--</td></tr>
+      <tr><td>Wild Bounty Showdown</td><td>PG</td><td data-rtp-padrao="99.7">99.7</td><td class="rtp-atual">--</td></tr>
+      <tr><td>Legend of Perseus</td><td>PG</td><td data-rtp-padrao="99.7">99.7</td><td class="rtp-atual">--</td></tr>
+      <tr><td>Mr. Hallow-Win</td><td>PG</td><td data-rtp-padrao="99.7">99.7</td><td class="rtp-atual">--</td></tr>
+    </tbody>
+  </table>
+
+  <script>
+    function atualizarRtp() {
+      const linhas = document.querySelectorAll('tbody tr');
+      linhas.forEach(linha => {
+        const rtpPadrao = parseFloat(linha.querySelector('td[data-rtp-padrao]').dataset.rtpPadrao);
+        const min = rtpPadrao - 5;
+        const max = rtpPadrao + 10;
+        const novoRtp = (Math.random() * (max - min) + min).toFixed(2);
+        linha.querySelector('.rtp-atual').textContent = novoRtp;
+      });
+    }
+    setInterval(atualizarRtp, 5000);
+    atualizarRtp();
+  </script>
+
+</body>
+</html>
