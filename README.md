@@ -1,0 +1,2 @@
+# RTP-EQUIPEL7SLOTS
+RTP ao vivo dos SLOTS 
