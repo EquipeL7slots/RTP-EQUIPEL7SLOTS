@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>RTP de Slots - Protótipo Ao Vivo</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+      background-color: #f4f4f9;
+    }
+    table {
+      width: 80%;
+      border-collapse: collapse;
+      margin: 0 auto;
+      background: white;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    th, td {
+      padding: 12px 20px;
+      border-bottom: 1px solid #ddd;
+      text-align: center;
+    }
+    th {
+      background-color: #4CAF50;
+      color: white;
+      font-weight: bold;
+    }
+    tr:hover {
+      background-color: #f1f1f1;
+    }
+    caption {
+      font-size: 1.5em;
+      margin-bottom: 15px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <table>
+    <caption>RTP de Slots (Protótipo Ao Vivo)</caption>
+    <thead>
+      <tr>
+        <th>Jogo</th>
+        <th>Provedor</th>
+        <th>RTP Padrão (%)</th>
+        <th>RTP Atual (%)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Fortune tiger</td>
+        <td>PG</td>
+        <td data-rtp-padrao="99.7">99.7</td>
+        <td class="rtp-atual">99.7</td>
+      </tr>
+      <tr>
+        <td>Fortune Dragon</td>
+        <td>PG</td>
+        <td data-rtp-padrao="99.7">99.7</td>
+        <td class="rtp-atual">99.7</td>
+      </tr>
+      <tr>
+        <td>Fortune OX</td>
+        <td>PG</td>
+        <td data-rtp-padrao="99.7">99.7</td>
+        <td class="rtp-atual">99.7</td>
+      </tr>
+      <tr>
+        <td>Fortune rabitt</td>
+        <td>PG</td>
+        <td data-rtp-padrao="99.7">99.7</td>
+        <td class="rtp-atual">99.7</td>
+      </tr>
+      <tr>
+        <td>Fortune mouse</td>
+        <td>PG</td>
+        <td data-rtp-padrao="99.7">99.7</td>
+        <td class="rtp-atual">99.7</td>
+      </tr>
+      <tr>
+        <td>Dragon hatch</td>
+        <td>PG</td>
+        <td data-rtp-padrao="99.7">99.7</td>
+        <td class="rtp-atual">99.7</td>
+      </tr>
+      <tr>
+        <td>Cash mania</td>
+        <td>PG</td>
+        <td data-rtp-padrao="99.7">99.7</td>
+        <td class="rtp-atual">99.7</td>
+      </tr>
+      <tr>
+        <td>Midas fortune</td>
+        <td>PG</td>
+        <td data-rtp-padrao="99.7">99.7</td>
+        <td class="rtp-atual">99.7</td>
+      </tr>
+      <tr>
+        <td>Ganesha gold</td>
+        <td>PG</td>
+        <td data-rtp-padrao="99.7">99.7</td>
+        <td class="rtp-atual">99.7</td>
+      </tr>
+      <tr>
+        <td>Piggy gold</td>
+        <td>PG</td>
+        <td data-rtp-padrao="99.7">99.7</td>
+        <td class="rtp-atual">99.7</td>
+      </tr>
+      <tr>
+        <td>Jungle Delight</td>
+        <td>PG</td>
+        <td data-rtp-padrao="99.7">99.7</td>
+        <td class="rtp-atual">99.7</td>
+      </tr>
+      <tr>
+        <td>Double Fortune</td>
+        <td>PG</td>
+        <td data-rtp-padrao="99.7">99.7</td>
+        <td class="rtp-atual">99.7</td>
+      </tr>
+      <tr>
+        <td>Supermarket Spree</td>
+        <td>PG</td>
+        <td data-rtp-padrao="99.7">99.7</td>
+        <td class="rtp-atual">99.7</td>
+      </tr>
+      <tr>
+        <td>Dragon Tiger Luck</td>
+        <td>PG</td>
+        <td data-rtp-padrao="99.7">99.7</td>
+        <td class="rtp-atual">99.7</td>
+      </tr>
+      <tr>
+        <td>Bikini paradise</td>
+        <td>PG</td>
+        <td data-rtp-padrao="99.7">99.7</td>
+        <td class="rtp-atual">99.7</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <script>
+    function atualizarRtp() {
+      const linhas = document.querySelectorAll('tbody tr');
+      linhas.forEach(linha => {
+        const rtpPadrao = parseFloat(linha.querySelector('td[data-rtp-padrao]').dataset.rtpPadrao);
+        const min = rtpPadrao - 5;
+        const max = rtpPadrao + 10;
+        const novoRtp = (Math.random() * (max - min) + min).toFixed(2);
+        linha.querySelector('.rtp-atual').textContent = novoRtp;
+      });
+    }
+    setInterval(atualizarRtp, 5000);
+  </script>
+</body>
+</html>
